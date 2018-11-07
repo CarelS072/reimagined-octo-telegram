@@ -2,6 +2,8 @@
 ### this is really not the name of the the project
 # Personal Project - Dev Enspiral - My Journal
 
+## Disclaimer
+Need to add some info in here about privacy, user/app IDs and about them being a part of gitignore, I don't want this info any where else than on the machine it is running on.
 
 ## User Stories
 
