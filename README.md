@@ -22,5 +22,6 @@ Need to add some info in here about privacy, user/app IDs and about them being a
 Additional Sources: 
 https://developers.facebook.com/docs/facebook-login/web
 https://developers.facebook.com/tools/explorer/?method=GET&path=me%3Ffields%3Did%2Cname%2Cpermalink_url&version=v3.2&classic=1
+https://sqlite.org/appfileformat.html
 
 
