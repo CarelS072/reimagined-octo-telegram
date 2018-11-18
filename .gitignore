@@ -3,3 +3,4 @@ node_modules
 
 #notTobeAdded
 .env
+donotsync.js
