@@ -1,34 +1,22 @@
 import React from 'react'
 import Home from './Home'
-
-
-function checkLoginState() {
-  FB.getLoginStatus(function(response) {
-    statusChangeCallback(response)
-  })
-}
+import FBLogon from './FBLogon'
+import ReactDOM from 'react-dom'
+import FacebookLogin from 'react-facebook-login'
 
 
 export default class App extends 
 React.Component {
-  // componentDidMount(){
-  //   checkLoginState( status => console.log(status.userID))
-  // // Response will look something like this
-  // //   {
-  // //     status: 'connected',
-  // //     authResponse: {
-  // //         accessToken: '...',
-  // //         expiresIn:'...',
-  // //         signedRequest:'...',
-  // //         userID:'...'
-  // //     }
-  // // }
-  // }
   render() {
     return (
-      <Home/>
+      <div>
+        {/* <Home/> */}
+        <FBLogon />
+      </div>
+   
     )
   }
 }
+
 
 
