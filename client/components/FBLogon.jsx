@@ -11,15 +11,15 @@ import React from 'react'
 import FacebookLogin from 'react-facebook-login'
 import ReactDOM from 'react-dom'
 
-let fbContent=null
-
 export default class FBLogon extends React.Component {
   state = {
     isLoggedIn: false,
     userID: "",
     name: "",
     email: "",
-    picture: ""
+    picture: "",
+    AT: ""
+
   }
 
   componentDidMount(){
@@ -29,27 +29,37 @@ export default class FBLogon extends React.Component {
   }
   responseFacebook = response => {
     console.log(response)
+    this.setState({
+    isLoggedIn: true,
+    userID: response.id,
+    name: response.name,
+    email: response.email,
+    picture: response.picture.data.url,
+    AT: response.accessToken
+
+    })
   }
   componentClicked = () => console.log("clicked")
-
+  
   checkStatus () {
-      console.log('checkstatus has been called')
+    let fbContent
 
+    console.log('checkstatus has been called')
     if (this.state.isLoggedIn) {
       console.log('TRUE')
-       fbContent = (
+      fbContent = (
         <div styleName={{
           width: "400px",
           margin: "auto",
           background: "#f4f4f4",
           padding: "20px"
         }}>
-        <img src={this.state.picture} alt={this.state.name} />
-        <h2>Welcome {this.state.name}</h2>
+        <img src={this.state.picture} alt={this.state.name} /><h2>Welcome {this.state.name}</h2>
       </div>
       )
+      console.log('True statement + '+ fbContent)
     } else {
-      console.log('False')
+      console.log('FALSE')
       fbContent = (
         <div>
           <p>some text here</p>
@@ -61,20 +71,28 @@ export default class FBLogon extends React.Component {
             callback={this.responseFacebook}
           />
         </div>    
-
       )
+      console.log('False Statement + '+ fbContent)
+
     } 
   }
-
   render() {
-
-
     return (
       <React.Fragment>
         <div>
-        {fbContent}
-                <img src={this.state.picture} alt={this.state.name} />
+        {/* {fbContent} */}
+        
+        <div>
+          <img src={this.state.picture} alt={this.state.name} /> <h2>Welcome {this.state.name}</h2>
+        </div>
 
+        <FacebookLogin
+            appId="266966680001866"
+            autoLoad={true}
+            fields="name,email,picture"
+            onClick={this.componentClicked}
+            callback={this.responseFacebook}
+          />
           <p>some render text here</p>
         </div>
       </React.Fragment>

@@ -1,4 +1,3 @@
-require ('donenv/config')
 const server = require('./server')
 
 
