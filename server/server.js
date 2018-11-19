@@ -1,5 +1,7 @@
 const path = require('path')
 const express = require('express')
+require ('donenv/config')
+
 
 const server = express()
 

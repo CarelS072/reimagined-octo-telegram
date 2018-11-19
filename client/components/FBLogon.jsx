@@ -1,3 +1,12 @@
+// STATUS
+// Not functioning yet, IF function not performing IF statement? currently hardcoded to return false
+// DONE - Need Privacy policy to activate local domain: https://termsfeed.com/blog/privacy-policy-url-facebook-app/
+// DONE - Link to app page: https://developers.facebook.com/apps/266966680001866/settings/basic/
+// https://www.youtube.com/watch?v=ea9KyE78qKI
+// https://github.com/keppelen/react-facebook-login
+// https://gist.github.com/bradtraversy/815369774ece6ede28a564e2a1e7153a
+// https://medium.com/front-end-hacking/facebook-authorization-in-a-react-app-b7a9176aacb6
+
 import React from 'react'
 import FacebookLogin from 'react-facebook-login'
 import ReactDOM from 'react-dom'
@@ -8,7 +17,7 @@ export default class FBLogon extends React.Component {
   state = {
     isLoggedIn: false,
     userID: "",
-    name: "Carel",
+    name: "",
     email: "",
     picture: ""
   }
@@ -41,8 +50,7 @@ export default class FBLogon extends React.Component {
       )
     } else {
       console.log('False')
-
-     fbContent = (
+      fbContent = (
         <div>
           <p>some text here</p>
           <FacebookLogin
@@ -52,7 +60,7 @@ export default class FBLogon extends React.Component {
             onClick={this.componentClicked}
             callback={this.responseFacebook}
           />
-        </div>
+        </div>    
 
       )
     } 
@@ -64,16 +72,14 @@ export default class FBLogon extends React.Component {
     return (
       <React.Fragment>
         <div>
-        <FacebookLogin
-            appId="266966680001866"
-            autoLoad={true}
-            fields="name,email,picture"
-            onClick={this.componentClicked}
-            callback={this.responseFacebook}
-          />
+        {fbContent}
+                <img src={this.state.picture} alt={this.state.name} />
+
           <p>some render text here</p>
         </div>
       </React.Fragment>
     )
   }
 }
+
+
