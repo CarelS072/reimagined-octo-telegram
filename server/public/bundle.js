@@ -2198,7 +2198,6 @@ var FBLogon = function (_React$Component) {
       email: "",
       picture: "",
       AT: ""
-
     }, _this.responseFacebook = function (response) {
       console.log(response);
       _this.setState({
@@ -2208,7 +2207,6 @@ var FBLogon = function (_React$Component) {
         email: response.email,
         picture: response.picture.data.url,
         AT: response.accessToken
-
       });
     }, _this.componentClicked = function () {
       return console.log("clicked");
@@ -2282,10 +2280,14 @@ var FBLogon = function (_React$Component) {
             _react2.default.createElement('img', { src: this.state.picture, alt: this.state.name }),
             ' ',
             _react2.default.createElement(
-              'h2',
+              'p',
               null,
               'Welcome ',
-              this.state.name
+              _react2.default.createElement(
+                'strong',
+                null,
+                this.state.name
+              )
             )
           ),
           _react2.default.createElement(_reactFacebookLogin2.default, {
@@ -28027,7 +28029,7 @@ var Home = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h1',
+          'p',
           null,
           'Welcome to My Journal'
         )
@@ -30119,7 +30121,12 @@ var Navigation = exports.Navigation = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'navigation' },
+        { className: 'navigation, borders' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          'My Journal'
+        ),
         _react2.default.createElement(
           'h3',
           null,
@@ -30276,7 +30283,7 @@ var ImportData = exports.ImportData = function (_React$Component) {
         'div',
         null,
         _react2.default.createElement(
-          'h1',
+          'h3',
           null,
           'Import Data'
         ),

@@ -7,7 +7,7 @@ export class ImportData extends React.Component {
   render() {
     return (
       <div>
-        <h1>Import Data</h1>
+        <h3>Import Data</h3>
         <FBLogon />
       </div>
     )

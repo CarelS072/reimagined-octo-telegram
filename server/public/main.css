@@ -1,0 +1,16 @@
+/* Need to review: https://materializecss.com/getting-started.html */
+
+body {
+  padding-left: 2em;
+  margin-top: 0.5em;
+}
+
+.borders {
+  border: 1px;
+  border-style: double;
+}
+
+.navigation {
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+}

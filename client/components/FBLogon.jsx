@@ -19,26 +19,25 @@ export default class FBLogon extends React.Component {
     email: "",
     picture: "",
     AT: ""
-
   }
 
   componentDidMount(){
     console.log('componenthas been mounted')
     this.checkStatus()
-
   }
+
   responseFacebook = response => {
     console.log(response)
     this.setState({
-    isLoggedIn: true,
-    userID: response.id,
-    name: response.name,
-    email: response.email,
-    picture: response.picture.data.url,
-    AT: response.accessToken
-
+      isLoggedIn: true,
+      userID: response.id,
+      name: response.name,
+      email: response.email,
+      picture: response.picture.data.url,
+      AT: response.accessToken
     })
   }
+
   componentClicked = () => console.log("clicked")
   
   checkStatus () {
@@ -83,7 +82,7 @@ export default class FBLogon extends React.Component {
         {/* {fbContent} */}
         
         <div>
-          <img src={this.state.picture} alt={this.state.name} /> <h2>Welcome {this.state.name}</h2>
+          <img src={this.state.picture} alt={this.state.name} /> <p>Welcome <strong>{this.state.name}</strong></p>
         </div>
 
         <FacebookLogin

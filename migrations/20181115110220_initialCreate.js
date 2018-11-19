@@ -5,7 +5,7 @@ exports.up = (knex, Promise) => {
     table.string('title')
     table.date('created_at').defaultTo(knex.fn.now())
     table.date('created_at').defaultTo(knex.fn.now())
-    table.json('profile')
+    table.json('journalPage')
   })
 }
 
