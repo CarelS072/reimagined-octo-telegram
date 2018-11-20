@@ -11,10 +11,10 @@ const journalTemplate = {
 
 exports.seed = function(knex, Promise) {
   // Deletes ALL existing entries
-  return knex('table_name').del()
+  return knex('journal').del()
     .then(function () {
       // Inserts seed entries
-      return knex('table_name').insert([
+      return knex('journal').insert([
         {title: 'test', journalPage: journalTemplate},
         {title: 'test', journalPage: journalTemplate},
         {title: 'test', journalPage: journalTemplate}
