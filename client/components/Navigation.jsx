@@ -6,7 +6,7 @@ export class Navigation extends React.Component {
   render() {
     return (
       <div className='navigation, borders'>
-        <h1>My Journal</h1>
+        <h1>My Journal - {this.props.name} </h1>
         <h3>Navigation</h3>
         <button><Link to='/'>Home</Link></button>
         <button><Link to='/journal'>Journal</Link></button>
